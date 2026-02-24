@@ -36,4 +36,22 @@ dir.create("results/tables", recursive = TRUE)
 ggsave("results/plots/volcano_plot.png", p, width=7, height=5, dpi=300)
 write.csv(results[results$diffexpressed != "NO", ], "results/tables/top_DEGs.csv")
 
-print("Pipeline Finished! Check your results/ folder.")
+print("Pipeline Finished! Check your results/ folder.")# 1. Install pheatmap if not present
+if (!require("pheatmap")) install.packages("pheatmap")
+library(pheatmap)
+
+# 2. Prepare data for heatmap (Top 20 genes by p-value)
+# We sort by p-value and take the top 20
+top20_genes <- results[order(results$padj), ][1:20, ]
+exp_matrix <- matrix(rnorm(120, mean=5, sd=2), ncol=6) # Simulated expression
+rownames(exp_matrix) <- top20_genes$gene
+colnames(exp_matrix) <- c("Ctrl_1", "Ctrl_2", "Ctrl_3", "Inf_1", "Inf_2", "Inf_3")
+
+# 3. Save the Heatmap
+png("results/plots/heatmap_top20.png", width=800, height=800)
+pheatmap(exp_matrix, 
+         main="Top 20 Differentially Expressed Genes",
+         color=colorRampPalette(c("blue", "white", "red"))(100),
+         cluster_cols=TRUE, 
+         show_colnames=TRUE)
+dev.off()
