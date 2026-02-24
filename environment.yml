@@ -1,0 +1,12 @@
+name: rna_seq_env
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - r-base=4.2
+  - r-deseq2
+  - r-ggplot2
+  - r-pheatmap
+  - r-clusterprofiler
+  - r-org.hs.eg.db
+  
