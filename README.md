@@ -35,3 +35,9 @@ Inflammatory Signaling: The presence of pro-inflammatory cytokines in the DEGs i
 
 Conclusion
 This analysis demonstrates that the lung epithelium is not just a passive barrier but an active immunologic responder. These results provide a foundation for identifying potential therapeutic targets that could dampen hyper-inflammation (cytokine storms) while maintaining antiviral efficacy.
+
+## 🛠 Technical Stack
+- **Language:** R (v4.2+)
+- **Libraries:** DESeq2, ggplot2, pheatmap, ggrepel
+- **Environment:** Conda, GitHub Codespaces
+- **Data Modeling:** Generalized Linear Models (GLM)
