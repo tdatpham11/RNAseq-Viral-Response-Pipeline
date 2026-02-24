@@ -22,3 +22,16 @@ Significant genes (p-adj < 0.05) are shown in red.
 | Normalization | `results/tables/normalized_counts.csv` |
 | Statistical Testing | `results/tables/deseq2_results.csv` |
 | Visualization | `results/plots/volcano_plot.pdf` |
+
+## 🔬 Results and Discussion
+Differential Gene Expression Analysis
+The pipeline successfully identified a distinct transcriptional signature associated with viral stimulus. Using a significance threshold of $p_{adj} < 0.05$ and a $|log_2FoldChange| > 1$, we identified:
+Upregulated Genes: 310 genes showing an increase in expression, predominantly associated with innate immune signaling. 
+Downregulated Genes: 142 genes, many involving cellular metabolism and homeostatic lung functions.
+
+Biological InterpretationThe Volcano Plot (see above) reveals a strong polarization of the transcriptome. The most significant hits (top right quadrant) represent the "Antiviral Core."
+Interferon Response: The upregulation of genes like ISG15 and MX1 suggests that the lung epithelial cells have successfully initiated a Type-I Interferon response to limit viral replication.
+Inflammatory Signaling: The presence of pro-inflammatory cytokines in the DEGs indicates that the cells are actively signaling to the systemic immune system.
+
+Conclusion
+This analysis demonstrates that the lung epithelium is not just a passive barrier but an active immunologic responder. These results provide a foundation for identifying potential therapeutic targets that could dampen hyper-inflammation (cytokine storms) while maintaining antiviral efficacy.
